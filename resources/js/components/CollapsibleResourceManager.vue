@@ -28,7 +28,7 @@
 
         <template v-if="isGroup && data.resources.length">
 
-            <h4 class="relative select-none ml-8 mt-4 text-xs text-white-50% uppercase tracking-wide cursor-pointer"
+            <h4 class="relative select-none ml-8 mt-4 text-xs text-white-50% tracking-wide cursor-pointer"
                 v-if="data.label"
                 >
 
