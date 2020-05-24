@@ -130,13 +130,19 @@
                         is: 'router-link',
                         to: this.data.linkTo.router,
                         target: this.data.linkTo.target,
-                        class: [ 'cursor-pointer', 'dim', 'text-white','no-underline' ]
+                        class: [ 'cursor-pointer', 
+                                'dim', 
+                                'text-white',
+                                'no-underline',
+                                'text-sm', 
+                                'font-normal' ]
                     }
 
                 }
 
                 return {
-                    is: 'h3'
+                    is: 'h3',
+                    class: ['text-sm', 'font-normal']
                 }
 
             }
