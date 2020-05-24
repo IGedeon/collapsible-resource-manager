@@ -16,7 +16,7 @@
                    :target="resource.target">
 
                     <Badge :label="resource.badge">
-                        {{ resource.label }}
+                        {{ resource.label | capitalize }}
                     </Badge>
 
                     <div v-if="resource.icon" class="absolute resource-list-icon flex" v-html="resource.icon"/>
@@ -44,7 +44,7 @@
                 <div v-if="resource.icon" class="absolute resource-list-icon flex" v-html="resource.icon"/>
 
                 <Badge :label="resource.badge">
-                    {{ resource.label }}
+                    {{ resource.label | capitalize }}
                 </Badge>
 
             </router-link>
@@ -66,6 +66,11 @@
             resources: { type: Array, required: true },
             recursive: { type: Boolean, default: false },
             rememberMenuState: { type: Boolean, required: true }
+        },
+        filters: {
+          capitalize: function (value) {
+            return (value + '').toLowerCase().replace(/(?<= )[^\s]|^./g, a=>a.toUpperCase());
+          }
         }
     }
 

@@ -7,7 +7,7 @@
         </div>
 
         <div v-if="label" class="badge rounded-full text-xxs ml-2 self-start">
-            {{ label }}
+            {{ label | capitalize }}
         </div>
 
     </div>
@@ -22,6 +22,11 @@
             label: {
                 type: String
             }
+        },
+        filters: {
+          capitalize: function (value) {
+            return (value + '').toLowerCase().replace(/(?<= )[^\s]|^./g, a=>a.toUpperCase());
+          }
         }
     }
 

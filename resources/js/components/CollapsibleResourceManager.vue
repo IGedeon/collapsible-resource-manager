@@ -14,7 +14,7 @@
 
             <Badge :label="data.badge">
                 <span class="text-white sidebar-label">
-                    {{ data.label }}
+                    {{ data.label | capitalize}}
                 </span>
             </Badge>
 
@@ -49,7 +49,7 @@
                 </div>
 
                 <Badge :label="data.badge"  v-bind="topLevelLink">
-                    {{ data.label }}
+                    {{ data.label | capitalize }}
                 </Badge>
 
             </h4>
@@ -145,12 +145,21 @@
             toggleGroup(id) {
                 this.activeMenu[ id ] = !this.activeMenu[ id ]
             }
+        },
+        filters: {
+          capitalize: function (value) {
+            return (value + '').toLowerCase().replace(/(?<= )[^\s]|^./g, a=>a.toUpperCase());
+          }
         }
     }
 
 </script>
 
 <style>
+
+    .resources-only ul {
+        margin-left: 20px;
+    }
 
     .collapsible-indicator {
         top: -6px;
